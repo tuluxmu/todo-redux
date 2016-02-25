@@ -1,23 +1,34 @@
 import React from 'react'
-import { filter } from '../actions'
+import classNames from 'classnames'
 
 class FilterLink extends React.Component {
   constructor(props) {
     super(props)
     this.onClick = this.onClick.bind(this)
+    this.filter = this.props.onFilterClick
   }
 
   onClick(e) {
-    return this.props.onFilterClick(this.props.filter)
+    switch(this.props.type) {
+      case 'Show All':
+        return this.filter('SHOW_ALL', true)
+      case 'Active':
+        return this.filter('SHOW_ACTIVE', true)
+      case 'Completed':
+        return this.filter('SHOW_COMPLETED', true)
+      default:
+        return this.filter('SHOW_ALL', true)
+    }
   }
 
   render() {
     return (
-      <span>
         <a href='#' 
           onClick={this.onClick}
-        >{this.props.type}</a>
-      </span>
+          className='breadcrumb'
+        >
+          {this.props.type}
+        </a>
     )
   }
 }

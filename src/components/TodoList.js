@@ -24,11 +24,12 @@ class TodoList extends React.Component {
           text={todo.text}
           completed={todo.completed}
           onTodoClick={this.props.onTodoClick}
+          removeTodo={this.props.removeTodo}
         />
       )
     })
     return (
-      <ul>
+      <ul className='collection'>
         {todos}
       </ul>
     )

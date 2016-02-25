@@ -22,6 +22,10 @@ function todos(state = [], action) {
         return todo
       }
     })
+    case 'REMOVE_TODO':
+      return state.filter(todo => {
+        return action.id !== todo.id
+    })
     default: 
       return state
   }

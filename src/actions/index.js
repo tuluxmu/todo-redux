@@ -16,9 +16,17 @@ export const completeTodo = (id) => {
   }
 }
 
-export const filter = (filter) => {
+export const filter = (filter, active) => {
   return {
-    type: filter
+    type: filter,
+    active
+  }
+}
+
+export const removeTodo = (id) => {
+  return {
+    type: 'REMOVE_TODO',
+    id
   }
 }
 

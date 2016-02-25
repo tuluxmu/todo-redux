@@ -7,7 +7,7 @@ class AddTodo extends React.Component {
     this.state = {
       text: ''
     }
-    this.dispatch = this.props.dispatch
+    this.onSubmit = this.props.onSubmit
     this.onChange = this.onChange.bind(this)
     this.onClick = this.onClick.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -25,12 +25,12 @@ class AddTodo extends React.Component {
     let text = this.state.text.trim()
 
     if(pressed === 13) {
-      this.handleSubmit(addTodo(text))
+      this.handleSubmit(text)
     }
   }
 
-  handleSubmit(action) {
-    this.dispatch(action) 
+  handleSubmit(text) {
+    this.onSubmit(text)
     this.setState({
       text: ''
     })
@@ -40,23 +40,30 @@ class AddTodo extends React.Component {
     let text = this.state.text.trim()
 
     if(text) {
-      this.handleSubmit(addTodo(text))
+      this.handleSubmit(text)
     }
   }
 
   render() {
     return (
-      <section className='TodoInput'>
-        <input
-          placeholder='add a todo..'
-          value={this.state.text}
-          onChange={this.onChange}
-          onKeyDown={this.handleKeyDown}
-          autoFocus
-        />
-        <button 
-          onClick={this.onClick}
-        >add</button>
+      <section className='TodoInput row'>
+        <div className='col s10 m10 l12'>
+          <input
+            placeholder='add a todo..'
+            value={this.state.text}
+            onChange={this.onChange}
+            onKeyDown={this.handleKeyDown}
+            autoFocus
+          />
+        </div>
+        <div className='col s2 m2 valign-wrapper add-button hide-on-large-only'>
+          <a 
+            className='btn-floating waves-effect waves-light'
+            onClick={this.onClick}
+          >
+            <i className="material-icons">add</i>
+          </a>
+        </div>
       </section>
     )
   }

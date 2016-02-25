@@ -8,13 +8,15 @@ class FilterList extends React.Component {
 
   render() {
     return (
-      <section className='filterLinks'>
-        <FilterLink {...this.props} filter='SHOW_ALL' type='Show All' />
-        {' | '}
-        <FilterLink {...this.props} filter='SHOW_ACTIVE' type='Active' />
-        {' | '}
-        <FilterLink {...this.props} filter='SHOW_COMPLETED' type='Completed' />
-      </section>
+      <nav className='filterLinks'>
+        <div className='nav-wrapper deep-purple'>
+          <div className='col s12 center-align'>
+            <FilterLink {...this.props} type="Show All"/>
+            <FilterLink {...this.props}  type="Active"/>
+            <FilterLink {...this.props} type="Completed"/>
+          </div>
+        </div>
+      </nav>
     )
   }
 }

@@ -1,17 +1,20 @@
-function visibilityFilter(state = { filter: 'SHOW_ALL' }, action) {
+function visibilityFilter(state = { filter: 'SHOW_ALL', active: true }, action) {
   switch(action.type) {
     case 'SHOW_ALL':
-      return Object.assign({}, state, {
-      filter: action.type
-    })
+      return {
+      filter: action.type,
+      active: action.active
+    }
     case 'SHOW_COMPLETED':
-      return Object.assign({}, state, {
-      filter: action.type
-    })
+      return {
+      filter: action.type,
+      active: action.active
+    }
     case 'SHOW_ACTIVE':
-      return Object.assign({}, state, {
-      filter: action.type
-    })
+      return {
+      filter: action.type,
+      active: action.active
+    }
     default: 
       return state
   }
