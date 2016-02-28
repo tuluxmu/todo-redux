@@ -29,7 +29,7 @@ class TodoList extends React.Component {
       )
     })
     return (
-      <ul className='collection'>
+      <ul className='collection hoverable'>
         {todos}
       </ul>
     )
