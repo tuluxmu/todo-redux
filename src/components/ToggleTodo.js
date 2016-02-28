@@ -8,7 +8,7 @@ class ToggleTodo extends React.Component {
     this.onClick = this.onClick.bind(this)
   }
 
-  onClick(){
+  onClick(e){
     return this.props.onTodoClick(this.props.id)
   }
 
@@ -18,12 +18,19 @@ class ToggleTodo extends React.Component {
       'inactivated': this.props.completed
     })
 
+    let id = 'todo-' + this.props.id
+
     return (
-      <a href='#!'
-        className={textClass}
-        onClick={this.onClick}
+      <a href='#'
       >
-        {this.props.text}
+        <input type='checkbox' id={id} />
+        <label 
+          className={textClass}
+          htmlFor={id} 
+          onClick={this.onClick}
+        >
+          {this.props.text}
+        </label> 
       </a>
     )
   }
