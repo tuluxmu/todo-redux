@@ -23,12 +23,13 @@ class FilterLink extends React.Component {
 
   render() {
     return (
+      <li className='tab col s3'>
         <a href='#' 
           onClick={this.onClick}
-          className='breadcrumb'
         >
           {this.props.type}
         </a>
+      </li>
     )
   }
 }

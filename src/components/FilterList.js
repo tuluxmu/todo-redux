@@ -8,15 +8,15 @@ class FilterList extends React.Component {
 
   render() {
     return (
-      <nav className='filterLinks'>
-        <div className='nav-wrapper deep-purple'>
-          <div className='col s12 center-align'>
+      <div className='row'>
+        <div className='col s12'>
+          <ul className='tabs purple lighten-5'>
             <FilterLink {...this.props} type="Show All"/>
             <FilterLink {...this.props}  type="Active"/>
             <FilterLink {...this.props} type="Completed"/>
-          </div>
+          </ul>
         </div>
-      </nav>
+      </div>
     )
   }
 }
