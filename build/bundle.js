@@ -20278,7 +20278,7 @@ var TodoList = function (_React$Component) {
       });
       return _react2.default.createElement(
         'ul',
-        { className: 'collection' },
+        { className: 'collection hoverable' },
         todos
       );
     }
@@ -20328,7 +20328,7 @@ var ToggleTodo = function (_React$Component) {
 
   _createClass(ToggleTodo, [{
     key: 'onClick',
-    value: function onClick() {
+    value: function onClick(e) {
       return this.props.onTodoClick(this.props.id);
     }
   }, {
@@ -20339,13 +20339,22 @@ var ToggleTodo = function (_React$Component) {
         'inactivated': this.props.completed
       });
 
+      var id = 'todo-' + this.props.id;
+
       return _react2.default.createElement(
         'a',
-        { href: '#!',
-          className: textClass,
-          onClick: this.onClick
+        { href: '#'
         },
-        this.props.text
+        _react2.default.createElement('input', { type: 'checkbox', id: id }),
+        _react2.default.createElement(
+          'label',
+          {
+            className: textClass,
+            htmlFor: id,
+            onClick: this.onClick
+          },
+          this.props.text
+        )
       );
     }
   }]);
