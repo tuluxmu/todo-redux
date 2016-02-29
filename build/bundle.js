@@ -19919,12 +19919,15 @@ var FilterLink = function (_React$Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'a',
-        { href: '#',
-          onClick: this.onClick,
-          className: 'breadcrumb'
-        },
-        this.props.type
+        'li',
+        { className: 'tab col s3' },
+        _react2.default.createElement(
+          'a',
+          { href: '#',
+            onClick: this.onClick
+          },
+          this.props.type
+        )
       );
     }
   }]);
@@ -19974,14 +19977,14 @@ var FilterList = function (_React$Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'nav',
-        { className: 'filterLinks' },
+        'div',
+        { className: 'row' },
         _react2.default.createElement(
           'div',
-          { className: 'nav-wrapper deep-purple' },
+          { className: 'col s12' },
           _react2.default.createElement(
-            'div',
-            { className: 'col s12 center-align' },
+            'ul',
+            { className: 'tabs purple lighten-5' },
             _react2.default.createElement(_FilterLink2.default, _extends({}, this.props, { type: 'Show All' })),
             _react2.default.createElement(_FilterLink2.default, _extends({}, this.props, { type: 'Active' })),
             _react2.default.createElement(_FilterLink2.default, _extends({}, this.props, { type: 'Completed' }))
