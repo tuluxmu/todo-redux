@@ -17,13 +17,17 @@ class ToggleTodo extends React.Component {
       'activated': !this.props.completed,
       'inactivated': this.props.completed
     })
-
+    let checked = this.props.completed
     let id = 'todo-' + this.props.id
 
     return (
       <a href='#'
       >
-        <input type='checkbox' id={id} />
+        <input 
+          type='checkbox' 
+          id={id}
+          checked={checked}
+        />
         <label 
           className={textClass}
           htmlFor={id} 

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "budo src/app.js:bundle.js -d build/ --live",
+    "start": "budo src/app.js:build/bundle.js -d build/ --live",
     "build": "browserify src/app.js -o build/bundle.js"
   },
   "keywords": [],

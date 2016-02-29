@@ -20338,14 +20338,18 @@ var ToggleTodo = function (_React$Component) {
         'activated': !this.props.completed,
         'inactivated': this.props.completed
       });
-
+      var checked = this.props.completed;
       var id = 'todo-' + this.props.id;
 
       return _react2.default.createElement(
         'a',
         { href: '#'
         },
-        _react2.default.createElement('input', { type: 'checkbox', id: id }),
+        _react2.default.createElement('input', {
+          type: 'checkbox',
+          id: id,
+          checked: checked
+        }),
         _react2.default.createElement(
           'label',
           {
